@@ -2,7 +2,7 @@
     "name": "Due Date Calculator",
     "short_name": "Pregancy Due Date Calculator",
     "lang": "en-US",
-    "start_url": "/",
+    "start_url": ".",
     "display": "standalone",
     "theme_color": "#c17ae8",
     "background_color": "#ca79e2",
