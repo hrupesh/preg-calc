@@ -74,6 +74,16 @@ body{
     }
 }
 
+@media screen and (max-width:600px){
+    .result-text{
+        padding: 2rem !important;
+        margin-top:40%;
+    }
+
+    .c-due-date{
+      font-size: 4rem !important;
+    }
+}
 
 
 
