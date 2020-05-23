@@ -7,5 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bourbon": "^7.0.0",
+    "workbox": "0.0.0",
+    "workbox-cli": "^5.1.3"
+  }
 }
