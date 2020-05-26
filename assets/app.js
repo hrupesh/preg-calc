@@ -42,6 +42,12 @@ function calculate_last_peroid() {
     var lpdate = document.getElementById('date-input').value;
 
     var lp_date = new Date(lpdate);
+    // console.log(lp_date);
+
+    // var preg_days = new Date();
+    // console.log(preg_days);
+    // preg_days.setDate(lp_date.getDate() - preg_days.getDate());
+    // console.log(preg_days);
 
 
     var month_name = function (dt) {
@@ -96,6 +102,34 @@ function calculate_last_peroid() {
     console.log("Days Left : " + diffrence_date);
     var days_elapsed = 280 - diffrence_date;
     console.log("Days Elapsed : " + days_elapsed);
+
+    var days_elapsed_week = parseInt(days_elapsed / 7);
+    var days_elapsed_days = parseInt(days_elapsed % 7);
+
+    console.log("You are : " + days_elapsed_week + " weeks pregnant.");
+    console.log("You are : " + days_elapsed_days + " days pregnant.");
+
+    var you_are = document.getElementById('you-are');
+    if(days_elapsed_days == 0){
+        you_are.innerHTML = " " + days_elapsed_week + " weeks ";
+    }
+    else if(days_elapsed_week == 0){
+        you_are.innerHTML = " " + days_elapsed_days + " days ";
+    }
+    else{
+        you_are.innerHTML = " " + days_elapsed_week + " weeks and " + days_elapsed_days + " days ";
+    }
+
+    if(days_elapsed_week <= 0 && days_elapsed_days <= 0){
+        var dd_text = document.getElementById('dd-text');
+        var you_are_container = document.getElementById('you-are-container');
+        dd_text.innerHTML = " Your due date <br> would be ";
+        you_are_container.style.display = 'none';
+        // you_are.innerHTML = " in the process of getting ";
+    }else{
+        var you_are_container = document.getElementById('you-are-container');
+        you_are_container.style.display = 'block';
+    }
 
     progress_percentage = days_elapsed * 100 / 280;
     progress_percentage = Math.round(progress_percentage);
@@ -222,6 +256,34 @@ function calculate_conception_date() {
     console.log("Days Left : " + diffrence_date);
     var days_elapsed = 280 - diffrence_date;
     console.log("Days Elapsed : " + days_elapsed);
+
+    var days_elapsed_week = parseInt(days_elapsed / 7);
+    var days_elapsed_days = parseInt(days_elapsed % 7);
+
+    console.log("You are : " + days_elapsed_week + " weeks pregnant.");
+    console.log("You are : " + days_elapsed_days + " days pregnant.");
+
+    var you_are = document.getElementById('you-are');
+    if(days_elapsed_days == 0){
+        you_are.innerHTML = " " + days_elapsed_week + " weeks ";
+    }
+    else if(days_elapsed_week == 0){
+        you_are.innerHTML = " " + days_elapsed_days + " days ";
+    }
+    else{
+        you_are.innerHTML = " " + days_elapsed_week + " weeks and " + days_elapsed_days + " days ";
+    }
+
+    if(days_elapsed_week <= 0 && days_elapsed_days <= 0){
+        var dd_text = document.getElementById('dd-text');
+        var you_are_container = document.getElementById('you-are-container');
+        dd_text.innerHTML = " Your due date <br> would be ";
+        you_are_container.style.display = 'none';
+        // you_are.innerHTML = " in the process of getting ";
+    }else{
+        var you_are_container = document.getElementById('you-are-container');
+        you_are_container.style.display = 'block';
+    }
 
     progress_percentage = days_elapsed * 100 / 280;
     progress_percentage = Math.round(progress_percentage);
@@ -366,6 +428,35 @@ function calculate_ultrasound_date() {
     console.log("Days Left : " + diffrence_date);
     var days_elapsed = 280 - diffrence_date;
     console.log("Days Elapsed : " + days_elapsed);
+
+    var days_elapsed_week = parseInt(days_elapsed / 7);
+    var days_elapsed_days = parseInt(days_elapsed % 7);
+
+    console.log("You are : " + days_elapsed_week + " weeks pregnant.");
+    console.log("You are : " + days_elapsed_days + " days pregnant.");
+
+    var you_are = document.getElementById('you-are');
+    if(days_elapsed_days == 0){
+        you_are.innerHTML = " " + days_elapsed_week + " weeks ";
+    }
+    else if(days_elapsed_week == 0){
+        you_are.innerHTML = " " + days_elapsed_days + " days ";
+    }
+    else{
+        you_are.innerHTML = " " + days_elapsed_week + " weeks and " + days_elapsed_days + " days ";
+    }
+
+    if(days_elapsed_week <= 0 && days_elapsed_days <= 0){
+        var dd_text = document.getElementById('dd-text');
+        var you_are_container = document.getElementById('you-are-container');
+        dd_text.innerHTML = " Your due date <br> would be ";
+        you_are_container.style.display = 'none';
+        // you_are.innerHTML = " in the process of getting ";
+    }else{
+        var you_are_container = document.getElementById('you-are-container');
+        you_are_container.style.display = 'block';
+    }
+
 
     progress_percentage = days_elapsed * 100 / 280;
     progress_percentage = Math.round(progress_percentage);

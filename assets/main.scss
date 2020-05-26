@@ -56,6 +56,13 @@ body {
     color: rgb(0, 0, 0);
     font-stretch: expanded;
     letter-spacing: 2px;
+
+    .you-are{
+      font-size: 1.3rem;
+      color: #255a1b;
+      border-bottom: 3px #2a335a solid;
+      margin-bottom: 0.6rem;
+    }
   }
 
   .c-due-date {

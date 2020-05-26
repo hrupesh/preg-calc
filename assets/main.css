@@ -58,6 +58,13 @@ body {
   letter-spacing: 2px;
 }
 
+.result-box .result-text .you-are {
+  font-size: 1.3rem;
+  color: #255a1b;
+  border-bottom: 3px #2a335a solid;
+  margin-bottom: 0.6rem;
+}
+
 .result-box .c-due-date {
   font-size: 5rem;
   padding: 1rem;
