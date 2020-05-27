@@ -267,7 +267,10 @@
 
                         <script>
                             $( function() {
-                                $( "#date-input3" ).datepicker();
+                                $( "#date-input3" ).datepicker({
+                                    minDate: "-8M -10D",
+                                    maxDate: "+2M",
+                                });
                             } );
                         </script>
 

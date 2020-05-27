@@ -13,7 +13,7 @@ Date.prototype.addDays = function (days) {
 var default_date = new Date(d.toDateString());
 var default_date1 = (d.getMonth() + 1) + '/' + (default_date.getDate() - 7) + '/' + d.getFullYear();
 var default_date2 = (d.getMonth() + 1) + '/' + (default_date.getDate() - 1) + '/' + d.getFullYear();
-var default_date3 = (d.getMonth() + 1) + '/' + (default_date.getDate() - 7) + '/' + d.getFullYear();
+var default_date3 = (d.getMonth() + 1) + '/' + (default_date.getDate()) + '/' + d.getFullYear();
 var default_date4 = (d.getMonth() + 1) + '/' + (default_date.getDate()) + '/' + d.getFullYear();
 // console.log(default_date);
 // default_date.setDate(default_date.getDate(-7));
