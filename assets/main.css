@@ -63,13 +63,14 @@ body {
   color: #255a1b;
   border-bottom: 3px #2a335a solid;
   margin-bottom: 0.6rem;
+  padding-bottom: 0.5rem;
 }
 
 .result-box .c-due-date {
   font-size: 5rem;
   padding: 1rem;
   color: red;
-  background: -webkit-linear-gradient(125deg, #fa0000, #49fa03);
+  background: -webkit-linear-gradient(280deg, #4e0ade, #dc0e0e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-transform: rotate3d(1, 1, 1, 145deg) translate3d(1260px, 1000px, 1000px) scale(5.5);
@@ -108,10 +109,13 @@ body {
     margin-top: 10%;
   }
   .c-due-date {
-    font-size: 4rem !important;
+    font-size: 2.4rem !important;
   }
   .bar {
-    bottom: 30% !important;
+    bottom: 25% !important;
+  }
+  .bar-text {
+    font-size: 0.8rem !important;
   }
 }
 
@@ -153,13 +157,14 @@ body {
 .bar .bar-text {
   font-size: 1.1rem;
   letter-spacing: 2px;
-  color: black;
+  color: white;
   position: relative;
   top: 30px;
-  text-shadow: 1px 2px 5px white;
+  text-shadow: 1px 2px 1px #6c51a5;
   -webkit-box-shadow: 2px 3px 2px #9a88bf61;
           box-shadow: 2px 3px 2px #9a88bf61;
-  background: #8291b963;
+  background: #8291b9;
+  border-radius: 10px;
   padding: 0.5rem;
 }
 
