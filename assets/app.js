@@ -34,11 +34,11 @@ function calculate_last_peroid() {
     var ftd = document.getElementById('f-t-date');
     var std = document.getElementById('s-t-date');
     var ttd = document.getElementById('t-t-date');
-    var due_date = document.getElementById('c-due-date');
+    // var due_date = document.getElementById('c-due-date');
     ftd.style.transform = 'translateX(5000px)';
     std.style.transform = 'translateX(5000px)';
     ttd.style.transform = 'translateX(5000px)';
-    due_date.style.transform = 'translateX(5000px)';
+    // due_date.style.transform = 'translateX(5000px)';
 
     var lpdate = document.getElementById('date-input').value;
 
@@ -73,16 +73,25 @@ function calculate_last_peroid() {
 
     console.log(month_name(new Date(due_date_uf)));
 
-    due_date_f = (month_name(new Date(due_date_uf))) + ' ' + due_date_uf.getDate() + ', <br> ' + due_date_uf.getFullYear();
+    due_date_f = (month_name(new Date(due_date_uf))) + ' ' + due_date_uf.getDate() + ', ' + due_date_uf.getFullYear();
 
     console.log("Due Date is: " + due_date_f);
 
 
     var result_box = document.getElementById('result');
     var c_due_date = document.getElementById('c-due-date');
+    console.log(c_due_date);
 
     result_box.style.display = 'block';
     c_due_date.innerHTML = due_date_f;
+
+    var c_due_date_month = document.getElementById('c-due-date-month');
+    var c_due_date_day = document.getElementById('c-due-date-day');
+    var c_due_date_year = document.getElementById('c-due-date-year');
+
+    c_due_date_month.textContent = month_name(new Date(due_date_uf));
+    c_due_date_day.textContent = due_date_uf.getDate();
+    c_due_date_year.textContent = due_date_uf.getFullYear();
 
     var first_trimester = lp_date.addDays(90);
     var second_trimester = lp_date.addDays(188);
@@ -93,6 +102,7 @@ function calculate_last_peroid() {
     console.log(third_trimester);
 
     var pgbar = document.getElementById('progress-bar');
+    
 
     cur_date = new Date();
     var diffrence_time = due_date_uf.getTime() - cur_date.getTime();
@@ -122,14 +132,21 @@ function calculate_last_peroid() {
     }
 
     if(days_elapsed_week <= 0 && days_elapsed_days <= 0){
-        var dd_text = document.getElementById('dd-text');
         var you_are_container = document.getElementById('you-are-container');
-        dd_text.innerHTML = " Your due date <br> would be ";
+        var dd_text = document.getElementById('dd-text');
+        dd_text.textContent = " Your due date would be ";
+        c_due_date.textContent = due_date_f;
+        var greet = document.getElementById('greet');
+        greet.style.visibility = 'hidden';
         you_are_container.style.display = 'none';
         // you_are.innerHTML = " in the process of getting ";
     }else{
         var you_are_container = document.getElementById('you-are-container');
         you_are_container.style.display = 'block';
+        var greet = document.getElementById('greet');
+        greet.style.visibility = 'visible';
+        var dd_text = document.getElementById('dd-text');
+        dd_text.textContent = " Your due date is ";
     }
 
     progress_percentage = days_elapsed * 100 / 280;
@@ -148,13 +165,17 @@ function calculate_last_peroid() {
 
     console.log(progress_percentage);
 
+    
     var i = 0;
     var width = -1;
-    var id = setInterval(frame, 70);
+    var id = setInterval(frame, 80);
+    
+    var pg_icon = document.getElementById('pg-icon');
 
     function frame() {
         if (progress_percentage <= 0){
             pgbar.style.width = 0 + "%";
+            pg_icon.style.left = -1 + "%";
             clearInterval(id);
         }
         if (width >= progress_percentage) {
@@ -164,6 +185,7 @@ function calculate_last_peroid() {
         else {
             width++;
             pgbar.style.width = width + "%";
+            pg_icon.style.left = width-2 + "%";
         }
 
     }
@@ -174,14 +196,14 @@ function calculate_last_peroid() {
         var ftd = document.getElementById('f-t-date');
         var std = document.getElementById('s-t-date');
         var ttd = document.getElementById('t-t-date');
-        var due_date = document.getElementById('c-due-date');
+        // var due_date = document.getElementById('c-due-date');
         ftd.style.transform = 'translateX(0)';
         ftd.innerHTML = "1st Trimester <br> Ends at " + first_trimester.getDate() + ", " + (month_name(new Date(first_trimester)));
         std.style.transform = 'translateX(0)';
         std.innerHTML = "2nd Trimester <br> Ends at " + second_trimester.getDate() + ", " + (month_name(new Date(second_trimester)));
         ttd.style.transform = 'translateX(0)';
         ttd.innerHTML = "3rd Trimester <br> Ends at " + third_trimester.getDate() + ", " + (month_name(new Date(third_trimester)));
-        due_date.style.transform = 'translateX(0)';
+        // due_date.style.transform = 'translateX(0)';
         clearInterval(datesInterval);
     }
 
@@ -195,11 +217,11 @@ function calculate_conception_date() {
     var ftd = document.getElementById('f-t-date');
     var std = document.getElementById('s-t-date');
     var ttd = document.getElementById('t-t-date');
-    var due_date = document.getElementById('c-due-date');
+    // var due_date = document.getElementById('c-due-date');
     ftd.style.transform = 'translateX(5000px)';
     std.style.transform = 'translateX(5000px)';
     ttd.style.transform = 'translateX(5000px)';
-    due_date.style.transform = 'translateX(5000px)';
+    // due_date.style.transform = 'translateX(5000px)';
 
     var lpdate = document.getElementById('date-input2').value;
 
@@ -228,7 +250,7 @@ function calculate_conception_date() {
 
     console.log(month_name(new Date(due_date_uf)));
 
-    due_date_f = (month_name(new Date(due_date_uf))) + ' ' + due_date_uf.getDate() + ', <br> ' + due_date_uf.getFullYear();
+    due_date_f = (month_name(new Date(due_date_uf))) + ' ' + due_date_uf.getDate() + ', ' + due_date_uf.getFullYear();
 
     console.log("Due Date is: " + due_date_f);
 
@@ -236,9 +258,17 @@ function calculate_conception_date() {
     var result_box = document.getElementById('result');
     var c_due_date = document.getElementById('c-due-date');
 
+    var c_due_date_month = document.getElementById('c-due-date-month');
+    var c_due_date_day = document.getElementById('c-due-date-day');
+    var c_due_date_year = document.getElementById('c-due-date-year');
+
+    c_due_date_month.textContent = month_name(new Date(due_date_uf));
+    c_due_date_day.textContent = due_date_uf.getDate();
+    c_due_date_year.textContent = due_date_uf.getFullYear();
+    
     result_box.style.display = 'block';
     c_due_date.innerHTML = due_date_f;
-
+    
     var first_trimester = lp_date.addDays(76);
     var second_trimester = lp_date.addDays(174);
     var third_trimester = lp_date.addDays(266);
@@ -279,12 +309,19 @@ function calculate_conception_date() {
     if(days_elapsed_week <= 0 && days_elapsed_days <= 0){
         var dd_text = document.getElementById('dd-text');
         var you_are_container = document.getElementById('you-are-container');
-        dd_text.innerHTML = " Your due date <br> would be ";
+        dd_text.textContent = " Your due date would be ";
+        c_due_date.textContent = due_date_f;
+        var greet = document.getElementById('greet');
+        greet.style.visibility = 'hidden';
         you_are_container.style.display = 'none';
         // you_are.innerHTML = " in the process of getting ";
     }else{
         var you_are_container = document.getElementById('you-are-container');
         you_are_container.style.display = 'block';
+        var greet = document.getElementById('greet');
+        greet.style.visibility = 'visible';
+        var dd_text = document.getElementById('dd-text');
+        dd_text.textContent = " Your due date is ";
     }
 
     progress_percentage = days_elapsed * 100 / 280;
@@ -305,11 +342,14 @@ function calculate_conception_date() {
 
     var i = 0;
     var width = -1;
-    var id = setInterval(frame, 70);
-
+    var id = setInterval(frame, 80);
+    
+    var pg_icon = document.getElementById('pg-icon');
+    
     function frame() {
         if (progress_percentage <= 0){
             pgbar.style.width = 0 + "%";
+            pg_icon.style.left = -1 + "%";
             clearInterval(id);
         }
         if (width >= progress_percentage) {
@@ -319,6 +359,7 @@ function calculate_conception_date() {
         else {
             width++;
             pgbar.style.width = width + "%";
+            pg_icon.style.left = width-2 + "%";
         }
 
     }
@@ -329,14 +370,14 @@ function calculate_conception_date() {
         var ftd = document.getElementById('f-t-date');
         var std = document.getElementById('s-t-date');
         var ttd = document.getElementById('t-t-date');
-        var due_date = document.getElementById('c-due-date');
+        // var due_date = document.getElementById('c-due-date');
         ftd.style.transform = 'translateX(0)';
         ftd.innerHTML = "1st Trimester <br> Ends at " + first_trimester.getDate() + ", " + (month_name(new Date(first_trimester)));
         std.style.transform = 'translateX(0)';
         std.innerHTML = "2nd Trimester <br> Ends at " + second_trimester.getDate() + ", " + (month_name(new Date(second_trimester)));
         ttd.style.transform = 'translateX(0)';
         ttd.innerHTML = "3rd Trimester <br> Ends at " + third_trimester.getDate() + ", " + (month_name(new Date(third_trimester)));
-        due_date.style.transform = 'translateX(0)';
+        // due_date.style.transform = 'translateX(0)';
         clearInterval(datesInterval);
     }
 
@@ -351,11 +392,11 @@ function calculate_ultrasound_date() {
     var ftd = document.getElementById('f-t-date');
     var std = document.getElementById('s-t-date');
     var ttd = document.getElementById('t-t-date');
-    var due_date = document.getElementById('c-due-date');
+    // var due_date = document.getElementById('c-due-date');
     ftd.style.transform = 'translateX(5000px)';
     std.style.transform = 'translateX(5000px)';
     ttd.style.transform = 'translateX(5000px)';
-    due_date.style.transform = 'translateX(5000px)';
+    // due_date.style.transform = 'translateX(5000px)';
 
     var lpdate = document.getElementById('date-input4').value;
 
@@ -397,7 +438,7 @@ function calculate_ultrasound_date() {
 
     console.log(month_name(new Date(due_date_uf)));
 
-    due_date_f = (month_name(new Date(due_date_uf))) + ' ' + due_date_uf.getDate() + ', <br> ' + due_date_uf.getFullYear();
+    due_date_f = (month_name(new Date(due_date_uf))) + ' ' + due_date_uf.getDate() + ',  ' + due_date_uf.getFullYear();
 
     console.log("Due Date is: " + due_date_f);
 
@@ -407,6 +448,14 @@ function calculate_ultrasound_date() {
 
     result_box.style.display = 'block';
     c_due_date.innerHTML = due_date_f;
+
+    var c_due_date_month = document.getElementById('c-due-date-month');
+    var c_due_date_day = document.getElementById('c-due-date-day');
+    var c_due_date_year = document.getElementById('c-due-date-year');
+
+    c_due_date_month.textContent = month_name(new Date(due_date_uf));
+    c_due_date_day.textContent = due_date_uf.getDate();
+    c_due_date_year.textContent = due_date_uf.getFullYear();
 
     var conceived_date = new Date(lp_date);
     conceived_date.setDate(conceived_date.getDate() - total_days);
@@ -452,12 +501,19 @@ function calculate_ultrasound_date() {
     if(days_elapsed_week <= 0 && days_elapsed_days <= 0){
         var dd_text = document.getElementById('dd-text');
         var you_are_container = document.getElementById('you-are-container');
-        dd_text.innerHTML = " Your due date <br> would be ";
+        dd_text.textContent = " Your due date would be ";
+        c_due_date.textContent = due_date_f;
+        var greet = document.getElementById('greet');
+        greet.style.visibility = 'hidden';
         you_are_container.style.display = 'none';
         // you_are.innerHTML = " in the process of getting ";
     }else{
         var you_are_container = document.getElementById('you-are-container');
         you_are_container.style.display = 'block';
+        var greet = document.getElementById('greet');
+        greet.style.visibility = 'visible';
+        var dd_text = document.getElementById('dd-text');
+        dd_text.textContent = " Your due date is ";
     }
 
 
@@ -479,24 +535,24 @@ function calculate_ultrasound_date() {
 
     var i = 0;
     var width = -1;
-    var id = setInterval(frame, 70);
-
+    var id = setInterval(frame, 80);
+    
+    var pg_icon = document.getElementById('pg-icon');
+    
     function frame() {
         if (progress_percentage <= 0){
             pgbar.style.width = 0 + "%";
+            pg_icon.style.left = -1 + "%";
             clearInterval(id);
         }
         if (width >= progress_percentage) {
             clearInterval(id);
             i = 0
         }
-        else if (width >= 99) {
-            clearInterval(id);
-            i = 0
-        }
         else {
             width++;
             pgbar.style.width = width + "%";
+            pg_icon.style.left = width-2 + "%";
         }
 
     }
@@ -507,14 +563,14 @@ function calculate_ultrasound_date() {
         var ftd = document.getElementById('f-t-date');
         var std = document.getElementById('s-t-date');
         var ttd = document.getElementById('t-t-date');
-        var due_date = document.getElementById('c-due-date');
+        // var due_date = document.getElementById('c-due-date');
         ftd.style.transform = 'translateX(0)';
         ftd.innerHTML = "1st Trimester <br> Ends at " + first_trimester.getDate() + ", " + (month_name(new Date(first_trimester)));
         std.style.transform = 'translateX(0)';
         std.innerHTML = "2nd Trimester <br> Ends at " + second_trimester.getDate() + ", " + (month_name(new Date(second_trimester)));
         ttd.style.transform = 'translateX(0)';
         ttd.innerHTML = "3rd Trimester <br> Ends at " + third_trimester.getDate() + ", " + (month_name(new Date(third_trimester)));
-        due_date.style.transform = 'translateX(0)';
+        // due_date.style.transform = 'translateX(0)';
         clearInterval(datesInterval);
     }
 
@@ -528,11 +584,11 @@ function calculate_ivf_date() {
     var ftd = document.getElementById('f-t-date');
     var std = document.getElementById('s-t-date');
     var ttd = document.getElementById('t-t-date');
-    var due_date = document.getElementById('c-due-date');
+    // var due_date = document.getElementById('c-due-date');
     ftd.style.transform = 'translateX(5000px)';
     std.style.transform = 'translateX(5000px)';
     ttd.style.transform = 'translateX(5000px)';
-    due_date.style.transform = 'translateX(5000px)';
+    // due_date.style.transform = 'translateX(5000px)';
 
     var lpdate = document.getElementById('date-input3').value;
 
@@ -576,7 +632,7 @@ function calculate_ivf_date() {
 
     console.log(month_name(new Date(due_date_uf)));
 
-    due_date_f = (month_name(new Date(due_date_uf))) + ' ' + due_date_uf.getDate() + ', <br> ' + due_date_uf.getFullYear();
+    due_date_f = (month_name(new Date(due_date_uf))) + ' ' + due_date_uf.getDate() + ',  ' + due_date_uf.getFullYear();
 
     console.log("Due Date is: " + due_date_f);
 
@@ -586,6 +642,14 @@ function calculate_ivf_date() {
 
     result_box.style.display = 'block';
     c_due_date.innerHTML = due_date_f;
+
+    var c_due_date_month = document.getElementById('c-due-date-month');
+    var c_due_date_day = document.getElementById('c-due-date-day');
+    var c_due_date_year = document.getElementById('c-due-date-year');
+
+    c_due_date_month.textContent = month_name(new Date(due_date_uf));
+    c_due_date_day.textContent = due_date_uf.getDate();
+    c_due_date_year.textContent = due_date_uf.getFullYear();
 
     var first_trimester = lp_date.addDays(76 - days_to_sub);
     var second_trimester = lp_date.addDays(174 - days_to_sub);
@@ -627,12 +691,19 @@ function calculate_ivf_date() {
     if(days_elapsed_week <= 0 && days_elapsed_days <= 0){
         var dd_text = document.getElementById('dd-text');
         var you_are_container = document.getElementById('you-are-container');
-        dd_text.innerHTML = " Your due date <br> would be ";
+        dd_text.textContent = " Your due date would be ";
+        c_due_date.textContent = due_date_f;
+        var greet = document.getElementById('greet');
+        greet.style.visibility = 'hidden';
         you_are_container.style.display = 'none';
         // you_are.innerHTML = " in the process of getting ";
     }else{
         var you_are_container = document.getElementById('you-are-container');
         you_are_container.style.display = 'block';
+        var greet = document.getElementById('greet');
+        greet.style.visibility = 'visible';
+        var dd_text = document.getElementById('dd-text');
+        dd_text.textContent = " Your due date is ";
     }
 
     progress_percentage = days_elapsed * 100 / 280;
@@ -653,11 +724,14 @@ function calculate_ivf_date() {
 
     var i = 0;
     var width = -1;
-    var id = setInterval(frame, 70);
-
+    var id = setInterval(frame, 80);
+    
+    var pg_icon = document.getElementById('pg-icon');
+    
     function frame() {
         if (progress_percentage <= 0){
             pgbar.style.width = 0 + "%";
+            pg_icon.style.left = -1 + "%";
             clearInterval(id);
         }
         if (width >= progress_percentage) {
@@ -667,6 +741,7 @@ function calculate_ivf_date() {
         else {
             width++;
             pgbar.style.width = width + "%";
+            pg_icon.style.left = width-2 + "%";
         }
 
     }
@@ -677,14 +752,14 @@ function calculate_ivf_date() {
         var ftd = document.getElementById('f-t-date');
         var std = document.getElementById('s-t-date');
         var ttd = document.getElementById('t-t-date');
-        var due_date = document.getElementById('c-due-date');
+        // var due_date = document.getElementById('c-due-date');
         ftd.style.transform = 'translateX(0)';
         ftd.innerHTML = "1st Trimester <br> Ends at " + first_trimester.getDate() + ", " + (month_name(new Date(first_trimester)));
         std.style.transform = 'translateX(0)';
         std.innerHTML = "2nd Trimester <br> Ends at " + second_trimester.getDate() + ", " + (month_name(new Date(second_trimester)));
         ttd.style.transform = 'translateX(0)';
         ttd.innerHTML = "3rd Trimester <br> Ends at " + third_trimester.getDate() + ", " + (month_name(new Date(third_trimester)));
-        due_date.style.transform = 'translateX(0)';
+        // due_date.style.transform = 'translateX(0)';
         clearInterval(datesInterval);
     }
 

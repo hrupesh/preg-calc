@@ -360,24 +360,34 @@
         <section>
             <div id="result" class="result-box">
                 <div class="due-date-results__info d-flex justify-content-center">
-                    <h1 class="due-date-results__info__headline">Your due date would be April 15, 2021.</h1>
-                    <div class="due-date-results__info__sub-headline">Congratulations! You are 3 weeks and 6 days pregnant.</div>
+                    <h1 class="due-date-results__info__headline">
+                        <div style="display: contents;" >
+                            <div id="dd-text" style="display: contents;">
+                                Your Due Date  is 
+                            </div>
+                            <div style="display: contents;" id="c-due-date"></div>
+                        </div>
+                    </h1>
+                    <div class="due-date-results__info__sub-headline" id="greet">Congratulations! You are
+                        <span id="you-are"></span>
+                        pregnant.</div>
                 </div>
                 <div class="due-date-results__calendar-wrapper">
                     <div class="due-date-results__calendar">
-                        <div class="due-date-results__calendar__month">April</div>
-                        <div class="due-date-results__calendar__day">15</div>
-                        <div class="due-date-results__calendar__year">2021</div>
+                        <div class="due-date-results__calendar__month" id="c-due-date-month"></div>
+                        <div class="due-date-results__calendar__day" id="c-due-date-day"></div>
+                        <div class="due-date-results__calendar__year" id="c-due-date-year"></div>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <a class="due-date-results__recalcLink" href="#">Recalculate your due date.</a>
+                    <span class="due-date-results__recalcLink" onclick="$('#result').css('display','none');">Recalculate your due date.</span>
                 </div>
                 <div class="d-flex justify-content-center pregnancy-timeline__headline">
                     <h2>Your Pregnancy Timeline</h2>
                 </div>
                 <div class="bar">
                     <span class="bar-progress" id="progress-bar"></span>
+                    <img src="https://images.agoramedia.com/wte3.0/gcms/redesign/baby-pin.svg" id="pg-icon" class="progress-icon" alt="">
                     <div class="row text-center ">
                         <span class="col bar-text" id="f-t-date">1st Trimester
                             <br>
@@ -397,7 +407,7 @@
                         </span>
                     </div>
                 </div>
-                
+
                 <div class="row" style="display: none;">
                     <div class="col-md-12 m-auto">
                         <div class="result-img">
@@ -407,15 +417,11 @@
                             <div class="float-right result-text">
                                 <div class="you-are" id="you-are-container">
                                     Congratulations! You are
-                                    <span id="you-are"></span>
-                                    pregnant.
+                                                                                                            
+                                                                                                            pregnant.
                                 </div>
-                                <span id="dd-text">
-                                    Your Due Date
-                                    <br>
-                                    is around
-                                </span>
-                                <div class="c-due-date" id="c-due-date"></div>
+
+
                             </div>
                         </div>
                     </div>
@@ -428,15 +434,16 @@
         </section>
 
 
-        <script>// if ('serviceWorker' in navigator) {
-        //     window.addEventListener('load', () => {
-        //         navigator.serviceWorker.register('./sw.js').then(registration => {
-        //             // console.log('SW registered: ', registration);
-        //         }).catch(registrationError => {
-        //             // console.log('SW registration failed: ', registrationError);
-        //         });
-        //     });
-        // }
-    </script>
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('./sw.js').then(registration => {
+                        // console.log('SW registered: ', registration);
+                    }).catch(registrationError => {
+                        // console.log('SW registration failed: ', registrationError);
+                    });
+                });
+            }
+        </script>
 
 </body></html>
