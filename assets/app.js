@@ -29,6 +29,7 @@ $(window).on('load', function () {
 function calculate_last_peroid() {
     // alert('calcluating.........');
     // console.log(event.target);
+    window.scrollTo(0,0);
 
     var ftd = document.getElementById('f-t-date');
     var std = document.getElementById('s-t-date');
@@ -189,6 +190,7 @@ function calculate_last_peroid() {
 function calculate_conception_date() {
     // alert('calcluating.........');
     // console.log(event.target);
+    window.scrollTo(0,0);
 
     var ftd = document.getElementById('f-t-date');
     var std = document.getElementById('s-t-date');
@@ -344,6 +346,7 @@ function calculate_conception_date() {
 function calculate_ultrasound_date() {
     // alert('calcluating.........');
     // console.log(event.target);
+    window.scrollTo(0,0);
 
     var ftd = document.getElementById('f-t-date');
     var std = document.getElementById('s-t-date');
@@ -520,6 +523,7 @@ function calculate_ultrasound_date() {
 function calculate_ivf_date() {
     // alert('calcluating.........');
     // console.log(event.target);
+    window.scrollTo(0,0);
 
     var ftd = document.getElementById('f-t-date');
     var std = document.getElementById('s-t-date');

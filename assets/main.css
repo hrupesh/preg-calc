@@ -29,14 +29,109 @@ body {
   margin: 2.5% 45%;
 }
 
+.due-date-results__info {
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.due-date-results__info h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-top: 4%;
+  color: #603091;
+  letter-spacing: 1px;
+}
+
+.due-date-results__info__sub-headline {
+  color: #4a4a4a;
+  font-size: 1.3rem;
+}
+
+.due-date-results__recalcLink {
+  font-size: 1rem;
+  color: #432c6c;
+  font-weight: 600;
+  line-height: 2rem;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid;
+}
+
+.due-date-results__calendar-wrapper {
+  background: url(//images.agoramedia.com/wte3.0/gcms/redesign/ddc-calendar-v3.svg) center center no-repeat;
+  background-size: contain;
+}
+
+.due-date-results__calendar {
+  background: url(//images.agoramedia.com/wte3.0/gcms/redesign/animation-confetti.gif) center center no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 0;
+  padding: 0;
+  padding-bottom: 100%;
+  text-align: center;
+  position: relative;
+  margin: 2em 0;
+  padding-bottom: 45%;
+}
+
+.due-date-results__calendar__month {
+  position: absolute;
+  width: 98vw;
+  top: 25%;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 2rem;
+  line-height: 1.25rem;
+}
+
+.due-date-results__calendar__day {
+  position: absolute;
+  width: 98vw;
+  top: 38%;
+  color: #1e1853;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 5rem;
+  line-height: 6rem;
+}
+
+.due-date-results__calendar__year {
+  position: absolute;
+  width: 98vw;
+  top: 73%;
+  font-size: 1.5em;
+  color: #fff;
+  font-weight: 900;
+  line-height: 3.5rem;
+  letter-spacing: 0px;
+  font-size: 2rem;
+}
+
+.pregnancy-timeline__headline {
+  font-size: 1.25em;
+  color: #603091;
+  font-weight: 700;
+  line-height: 1.2em;
+  letter-spacing: normal;
+  margin: 1.5rem 0 1rem 0;
+}
+
 .result-box {
-  min-height: 100vh;
-  min-width: 100vw;
-  position: fixed;
+  min-height: 150vh;
+  min-width: 100%;
+  position: absolute;
   display: none;
   top: 0;
   left: 0;
-  background: linear-gradient(135deg, blue -25%, violet 50%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ebfff3), color-stop(26%, #defffb), to(#b6dff1));
+  background-image: linear-gradient(to bottom, #ebfff3, #defffb 26%, #b6dff1);
+  background-repeat: no-repeat;
 }
 
 .result-box .result-img {
@@ -120,9 +215,9 @@ body {
 }
 
 .bar {
-  position: fixed;
-  bottom: 15%;
-  left: 5%;
+  position: absolute;
+  bottom: 20%;
+  left: 7%;
   height: 30px;
   width: 85vw;
   background: -webkit-gradient(linear, left top, right top, color-stop(25%, #5fcdd2bf), color-stop(75%, #7a66a4a1));
