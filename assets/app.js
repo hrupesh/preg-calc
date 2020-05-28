@@ -185,7 +185,11 @@ function calculate_last_peroid() {
         else {
             width++;
             pgbar.style.width = width + "%";
-            pg_icon.style.left = width-2 + "%";
+            if(w < 600 ){
+                pg_icon.style.left = width-5 + "%";
+            }else{
+                pg_icon.style.left = width-2 + "%";
+            }
         }
 
     }
@@ -359,7 +363,11 @@ function calculate_conception_date() {
         else {
             width++;
             pgbar.style.width = width + "%";
-            pg_icon.style.left = width-2 + "%";
+            if(w < 600 ){
+                pg_icon.style.left = width-5 + "%";
+            }else{
+                pg_icon.style.left = width-2 + "%";
+            }
         }
 
     }
@@ -552,7 +560,11 @@ function calculate_ultrasound_date() {
         else {
             width++;
             pgbar.style.width = width + "%";
-            pg_icon.style.left = width-2 + "%";
+            if(w < 600 ){
+                pg_icon.style.left = width-5 + "%";
+            }else{
+                pg_icon.style.left = width-2 + "%";
+            }
         }
 
     }
@@ -741,7 +753,11 @@ function calculate_ivf_date() {
         else {
             width++;
             pgbar.style.width = width + "%";
-            pg_icon.style.left = width-2 + "%";
+            if(w < 600 ){
+                pg_icon.style.left = width-5 + "%";
+            }else{
+                pg_icon.style.left = width-2 + "%";
+            }
         }
 
     }
